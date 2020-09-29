@@ -22,13 +22,18 @@ public class mailmerge {
 		System.out.print("Please enter your street: ");
 		String street = in.nextLine();
 		
-		//Merge data into mail template
-		System.out.println("\n" + "Dear " + firstName + " " + lastName + ",");
-		System.out.println("Please confirm that your address is " + houseNumber + " " + street + ".");
-		System.out.print("Is this address correct? Answer: ");
-		String yorno = in.nextLine();
-		System.out.print("Your answer is " + yorno + ". Thank you.");
+		//Create mail template
+		String line1 = "Dear <firstname> <lastname>,";
+		String line2 = "Please confirm that your address is <houseNumber> <street>.";
+		String line3 = "Is this address correct? Answer: ";
 		
+		//Print mail template with replaced values
+		System.out.println(line1.replace("<firstname>", firstName).replace("<lastname>", lastName));
+		System.out.println(line2.replace("<houseNumber>", houseNumber).replace("<street>", street));
+		System.out.print(line3);
+		
+		//Accept answer
+		String yorno = in.nextLine();
+		System.out.println("Your answer is " + yorno + ". Thank you.");
 	}
-	
 }
