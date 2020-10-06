@@ -15,15 +15,16 @@ public class BankAccount {
 	/**
 	   the interest percentage of the bank account
 	 */
-	final double interestPct = 0.05;
+	private double interestPct;
 	
 	
 	/**
       Constructs a bank account with a given starting balance and interest percentage.
       @param amount the starting balance of the bank account
     */
-	public BankAccount(double amount) {
+	public BankAccount(double amount, double intrPct) {
 		balance = amount;
+		interestPct = intrPct;
 	}
 
    
@@ -64,6 +65,5 @@ public class BankAccount {
 	 */
 	public double getInterestPct() {
 		return interestPct;
-	
 	}
 }

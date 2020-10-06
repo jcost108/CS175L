@@ -8,10 +8,14 @@ public class BankAccountTester {
 		//Ask user for starting balance
 		System.out.print("Please enter the new account's starting balance: ");
 		double startingBalance = in.nextDouble();
+		
+		//Ask user for interest rate
+		System.out.print("Please enter the new account's interest percentage: ");
+		double interestPct = in.nextDouble();
 	
 		//Create account myBankAccount with starting balance and interest percentage
-		BankAccount myBankAccount = new BankAccount(startingBalance);
-		System.out.println("A new bank account has been created with a starting balance of " + startingBalance + " and an interest rate of " + myBankAccount.getInterestPct() + ".");
+		BankAccount myBankAccount = new BankAccount(startingBalance, interestPct);
+		System.out.println("A new bank account has been created with a starting balance of " + myBankAccount.getBalance() + " and an interest percentage of " + myBankAccount.getInterestPct() + ".");
 		
 		//Ask user for amount to deposit into myBankAccount and deposit that amount
 		System.out.print("\nPlease enter an amount to deposit into the account: ");
@@ -24,7 +28,7 @@ public class BankAccountTester {
 		double withdrawAmount = in.nextDouble();
 		myBankAccount.withdraw(withdrawAmount);
 		
-		//Calculate the interest as a product of the balance and interest rate.
+		//Calculate the interest as a product of the balance and interest percentage.
 		double interest = myBankAccount.getBalance()*myBankAccount.getInterestPct();
 		
 		//Get and print the new balance in myBankAccount
