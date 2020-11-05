@@ -58,7 +58,6 @@ public class RomanNumerals {
 			System.out.print("");
 		}
 		
-		
 		//tens place
 		if (digit2 == 0 && digit0 <= 3) {
 			System.out.print("");
